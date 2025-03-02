@@ -34,6 +34,6 @@ python gradio_sd3_inference.py
 
 ```shell
 huggingface-cli download --resume-download THUDM/ImageReward --local-dir models/THUDM/ImageReward
-bash scripts/launch_sd3_train
+bash scripts/launch_sd3_train.sh
 ```
-
+## Ac
