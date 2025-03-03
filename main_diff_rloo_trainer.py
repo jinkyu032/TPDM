@@ -10,8 +10,8 @@ from omegaconf import OmegaConf
 # WARNING: the args for trainer are from the official Arguments, do not refer to that in our config.py
 from src.train.callbacks import DiffusionWandbCallback
 from src.train.config import ConfigPathArguments, CustomRLOOConfig
+from src.train.rloo_trainer import CommonRLOOTrainer
 from src.train.train_utilis import setup_debug
-from train.rloo_trainer import CommonRLOOTrainer
 
 
 # rank = os.environ.get("RANK")

@@ -476,10 +476,10 @@ class CommonRLOOTrainer(RLOOTrainer):
 
                             mb_inputs = model.subset_inputs(data, micro_batch_inds)
                             mb_outputs = model.subset_outputs(outputs, micro_batch_inds)
-                            mb_logprobs = mb_outputs.logprobs
-                            mb_alphas = mb_outputs.alphas
-                            mb_betas = mb_outputs.betas
-                            mb_prob_masks = mb_outputs.prob_masks
+                            mb_logprobs = mb_outputs["logprobs"]
+                            mb_alphas = mb_outputs["alphas"]
+                            mb_betas = mb_outputs["betas"]
+                            mb_prob_masks = mb_outputs["prob_masks"]
 
                             new_logprobs = model.logprobs(mb_inputs, mb_outputs)
                             new_ratio = (new_logprobs - mb_logprobs).exp()
