@@ -1,7 +1,15 @@
-# Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation
+<div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2412.01243-b31b1b.svg)](https://arxiv.org/abs/2412.01243)
-[![Static Badge](https://img.shields.io/badge/Checkpoint-Huggingface-yellow)](https://huggingface.co/MAPLE-WestLake-AIGC/TPDM)
+<h1>Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation</h1>
+
+<p align="center">
+<a href="https://arxiv.org/abs/2412.01243"><img src="https://img.shields.io/badge/arXiv-2412.01243-b31b1b.svg" alt="ArXiv"></a>
+<a href="https://huggingface.co/MAPLE-WestLake-AIGC/TPDM"><img src="https://img.shields.io/badge/Checkpoint-Huggingface-yellow" alt="Checkpoint"></a>
+</p>
+
+[MAPLE Lab, Westlake University](https://maple.lab.westlake.edu.cn/)
+
+</div>
 
 ![denosing process](./assets/denosing.png)
 
@@ -9,8 +17,11 @@ We proposes a lightweight diffusion time prediction module that forecasts optima
 Without modifying original model parameters, we efficiently optimize the entire denoising process using RL, accelerating generation speed and enhancing output quality for diffusion/flow models. The approach demonstrates improvements in human preference alignment
 and text-image matching metrics.
 
+## Visualization
+![examples](./assets/examples.png)
+
 ## Getting start for inference
-### Pretrained Model download
+### Download SD3 Pretrained Model
 
 ```shell
 mkdir models
@@ -21,7 +32,7 @@ pip install -r requirements.txt
 huggingface-cli download stabilityai/stable-diffusion-3-medium --local-dir models/stabilityai/stable-diffusion-3-medium
 ```
 
-### Download Checkpoints
+### Download TPM Checkpoints
 
 ```shell
 huggingface-cli download MAPLE-WestLake-AIGC/TPDM --local-dir checkpoint
@@ -44,6 +55,7 @@ Origin datasets we used can be download in [COCO](https://cocodataset.org/#home)
 huggingface-cli download --resume-download THUDM/ImageReward --local-dir models/THUDM/ImageReward
 bash scripts/launch_sd3_train.sh
 ```
+
 ## Acknowledgement
 Thanks to huggingface team for open-sourcing the [trl](https://github.com/huggingface/trl) and [diffusers](https://github.com/huggingface/diffusers) library, which part of our code is based on.
 
@@ -60,4 +72,3 @@ If you find our paper or code useful, wish you can cite our paper.
       url={https://arxiv.org/abs/2412.01243}, 
 }
 ```
-![examples](./assets/examples.png)
