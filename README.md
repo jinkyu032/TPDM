@@ -1,12 +1,16 @@
 # Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation
 
+[![arXiv](https://img.shields.io/badge/arXiv-2412.01243-b31b1b.svg)](https://arxiv.org/abs/2412.01243)
+[![Static Badge](https://img.shields.io/badge/Checkpoint-Huggingface-yellow)](https://huggingface.co/MAPLE-WestLake-AIGC/TPDM)
+
 ![denosing process](./assets/denosing.png)
 
 We proposes a lightweight diffusion time prediction module that forecasts optimal denoising noise level.
 Without modifying original model parameters, we efficiently optimize the entire denoising process using RL, accelerating generation speed and enhancing output quality for diffusion/flow models. The approach demonstrates improvements in human preference alignment
 and text-image matching metrics.
 
-## Pretrained Model download
+## Getting start for inference
+### Pretrained Model download
 
 ```shell
 mkdir models
@@ -17,20 +21,20 @@ pip install -r requirements.txt
 huggingface-cli download stabilityai/stable-diffusion-3-medium --local-dir models/stabilityai/stable-diffusion-3-medium
 ```
 
-## Download Checkpoints
+### Download Checkpoints
 
 ```shell
 huggingface-cli download MAPLE-WestLake-AIGC/TPDM --local-dir checkpoint
 # subdir sd3 is stable diffusion 3 checkpoint
 ```
 
-## Launch Gradio Web For Inference
+### Launch Gradio Web For Inference
 
 ```python
 python gradio_sd3_inference.py
 ```
 
-## Training model
+## Getting start for training
 
 If you want to train TPDM, you should prepare prompts and organize it like exmaple/example.jsonl.
 
@@ -41,7 +45,7 @@ huggingface-cli download --resume-download THUDM/ImageReward --local-dir models/
 bash scripts/launch_sd3_train.sh
 ```
 ## Acknowledgement
-Thanks to huggingface team for open-sourcing the [trl](https://github.com/huggingface/trl) library, which part of our code is based on.
+Thanks to huggingface team for open-sourcing the [trl](https://github.com/huggingface/trl) and [diffusers](https://github.com/huggingface/diffusers) library, which part of our code is based on.
 
 ## Citation
 If you find our paper or code useful, wish you can cite our paper.
@@ -56,3 +60,4 @@ If you find our paper or code useful, wish you can cite our paper.
       url={https://arxiv.org/abs/2412.01243}, 
 }
 ```
+![examples](./assets/examples.png)
