@@ -13,11 +13,13 @@
 
 ![denosing process](./assets/denosing.png)
 
-We proposes a lightweight diffusion time prediction module that forecasts optimal denoising noise level.
-Without modifying original model parameters, we efficiently optimize the entire denoising process using RL, accelerating generation speed and enhancing output quality for diffusion/flow models. The approach demonstrates improvements in human preference alignment
-and text-image matching metrics.
+- In this paper, we view denoising steps as a kind of chain-of-thought in image generation, and introduce the Time Prediction Diffusion Model (TPDM) that adaptively predicts the next diffusion time to denoise images in the reverse diffusion process.
+TPDM adjusts the noise schedule for each prompt individually. By aligning the final outputs of the denoising process with human preferences, TPDM can reduce the number of inference steps by almost 50% while still keeping image quality.
 
-## Visualization
+- Our paper is accepted at CVPR 2025.
+
+
+## Visualization of the Predicted Schedules
 ![examples](./assets/examples.png)
 
 ## Getting start for inference
@@ -41,7 +43,7 @@ huggingface-cli download MAPLE-WestLake-AIGC/TPDM --local-dir checkpoint
 
 ### Launch Gradio Web For Inference
 
-```python
+```shell
 python gradio_sd3_inference.py
 ```
 
