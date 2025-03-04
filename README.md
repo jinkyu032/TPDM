@@ -41,7 +41,7 @@ huggingface-cli download --resume-download THUDM/ImageReward --local-dir models/
 bash scripts/launch_sd3_train.sh
 ```
 ## Acknowledgement
-We thank the huggingface team to opensource [trl](https://github.com/huggingface/trl) library, which part of our code is based on.
+Thanks to huggingface team for open-sourcing the [trl](https://github.com/huggingface/trl) library, which part of our code is based on.
 
 ## Citation
 If you find our paper or code useful, wish you can cite our paper.
