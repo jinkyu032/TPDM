@@ -70,6 +70,6 @@ If you find our paper or code useful, wish you can cite our paper.
       booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
       month     = {June},
       year      = {2025},
-      url={https://arxiv.org/abs/2412.01243}, 
+      url       = {https://arxiv.org/abs/2412.01243}, 
 }
 ```
