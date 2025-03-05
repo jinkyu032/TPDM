@@ -65,8 +65,8 @@ Thanks to huggingface team for open-sourcing the [trl](https://github.com/huggin
 If you find our paper or code useful, wish you can cite our paper.
 ```
 @misc{ye2025scheduleflydiffusiontime,
-      title={Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation}, 
-      author={Zilyu Ye and Zhiyang Chen and Tiancheng Li and Zemin Huang and Weijian Luo and Guo-Jun Qi},
+      title     = {Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation}, 
+      author    = {Zilyu Ye and Zhiyang Chen and Tiancheng Li and Zemin Huang and Weijian Luo and Guo-Jun Qi},
       booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
       month     = {June},
       year      = {2025},
