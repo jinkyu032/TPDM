@@ -51,7 +51,7 @@ python gradio_sd3_inference.py
 
 If you want to train TPDM, you should prepare prompts and organize it like exmaple/example.jsonl.
 
-Origin datasets we used can be download in [COCO](https://cocodataset.org/#home), [COYO-11M](https://huggingface.co/datasets/CaptionEmporium/coyo-hd-11m-llavanext) and [Laion-Art](https://huggingface.co/datasets/laion/laion-art)
+Original datasets we used can be download in [COCO](https://cocodataset.org/#home), [COYO-11M](https://huggingface.co/datasets/CaptionEmporium/coyo-hd-11m-llavanext) and [Laion-Art](https://huggingface.co/datasets/laion/laion-art)
 
 ```shell
 huggingface-cli download --resume-download THUDM/ImageReward --local-dir models/THUDM/ImageReward
@@ -67,10 +67,9 @@ If you find our paper or code useful, wish you can cite our paper.
 @misc{ye2025scheduleflydiffusiontime,
       title={Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation}, 
       author={Zilyu Ye and Zhiyang Chen and Tiancheng Li and Zemin Huang and Weijian Luo and Guo-Jun Qi},
-      year={2025},
-      eprint={2412.01243},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      month     = {June},
+      year      = {2025},
       url={https://arxiv.org/abs/2412.01243}, 
 }
 ```
