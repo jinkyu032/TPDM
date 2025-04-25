@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 # if you are in mainland china, you can use the mirror to accelerate download
 # export HF_ENDPOINT=https://hf-mirror.com
-huggingface-cli download stabilityai/stable-diffusion-3-medium --local-dir models/stabilityai/stable-diffusion-3-medium
+huggingface-cli download stabilityai/stable-diffusion-3-medium-diffusers --local-dir models/stabilityai/stable-diffusion-3-medium
 ```
 
 ### Download TPM Checkpoints
