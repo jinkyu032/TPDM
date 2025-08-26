@@ -95,6 +95,7 @@ class CommonRLOOTrainer(RLOOTrainer):
         self.args = config
         args = config
         self.policy = policy
+        self.model = policy
 
         self.reward_model = reward_model
         self.train_dataset = train_dataset
@@ -141,7 +142,7 @@ class CommonRLOOTrainer(RLOOTrainer):
         #########
         for module in [policy, reward_model]:
             disable_dropout_in_model(module)
-        self.model = policy
+        #self.model = policy
         self.create_optimizer_and_scheduler(
             num_training_steps=args.num_total_batches
         )  # note that we are calling `self.lr_scheduler.step()` manually only at the batch level
@@ -595,7 +596,7 @@ class CommonRLOOTrainer(RLOOTrainer):
             self.state.global_step += 1
             self.control = self.callback_handler.on_step_end(args, self.state, self.control)
             if self.control.should_save:
-                self._save_checkpoint(model, trial=None, metrics=metrics)
+                self._save_checkpoint(model, trial=None)#, metrics=metrics)
                 self.control = self.callback_handler.on_save(self.args, self.state, self.control)
             torch.cuda.empty_cache()
             gc.collect()
@@ -606,5 +607,5 @@ class CommonRLOOTrainer(RLOOTrainer):
         # HF trainer specifics
         self.control = self.callback_handler.on_train_end(args, self.state, self.control)
         if self.control.should_save:
-            self._save_checkpoint(model, trial=None, metrics=None)
+            self._save_checkpoint(model, trial=None)#, metrics=None)
             self.control = self.callback_handler.on_save(self.args, self.state, self.control)

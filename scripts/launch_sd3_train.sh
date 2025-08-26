@@ -1,10 +1,11 @@
 export NUM_GPUS=$(nvidia-smi --list-gpus | wc -l)
 export OMP_NUM_THREADS=4
-export WANDB_PROJECT="test"
-export WANDB_MODE="offline"
+export WANDB_PROJECT="TPDM"
+export WANDB_MODE="online"
+export WANDB_ENTITY="SNU_Gen"
 export RUN_NAME="test"
 
-OUTPUT_DIR="outputs/$(date +'%Y-%m-%d')/$RUN_NAME"
+OUTPUT_DIR="/cvdata12/jinkyu/TPDM/outputs/$(date +'%Y-%m-%d')/$RUN_NAME"
 
 python -m torch.distributed.run --nproc_per_node $NUM_GPUS --nnodes 1 --standalone \
     main_diff_rloo_trainer.py \
